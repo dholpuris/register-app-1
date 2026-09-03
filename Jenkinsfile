@@ -7,8 +7,8 @@ pipeline {
     environment {
 	    APP_NAME = "register-app-pipeline"
             RELEASE = "1.0.0"
-            DOCKER_USER = "ashfaque9x"
-            DOCKER_PASS = 'dockerhub'
+            DOCKER_USER = "dholpuris"
+            DOCKER_PASS = 'Guddunana@12345'
             IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
             IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
 	    JENKINS_API_TOKEN = credentials("JENKINS_API_TOKEN")
@@ -104,7 +104,7 @@ pipeline {
        failure {
              emailext body: '''${SCRIPT, template="groovy-html.template"}''', 
                       subject: "${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - Failed", 
-                      mimeType: 'text/html',to: "ashfaque.s510@gmail.com"
+                      mimeType: 'text/html',to: "sumitdhaulpuri786@gmail.com"
       }
       success {
             emailext body: '''${SCRIPT, template="groovy-html.template"}''', 

@@ -14,6 +14,7 @@
   <properties>
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
+    <maven.compiler.release>21</maven.compiler.release>
   </properties>
 
   <modules>
@@ -30,29 +31,26 @@
   </distributionManagement>
 
   <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>21</source>
-          <target>21</target>
-        </configuration>
-      </plugin>
-                    <plugin>
-                   <groupId>org.apache.maven.plugins</groupId>
-                   <artifactId>maven-compiler-plugin</artifactId>
-                   <version>3.14.1</version>
-                   <configuration>
-                       <release>21</release>
-                   </configuration>
-              </plugin>
-      <plugin>
-        <artifactId>maven-release-plugin</artifactId>
-        <configuration>
-          <autoVersionSubmodules>true</autoVersionSubmodules>
-        </configuration>
-      </plugin>
+  <plugins>
 
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.14.1</version>
+      <configuration>
+        <release>21</release>
+      </configuration>
+    </plugin>
+
+    <plugin>
+      <artifactId>maven-release-plugin</artifactId>
+      <configuration>
+        <autoVersionSubmodules>true</autoVersionSubmodules>
+      </configuration>
+    </plugin>
+
+  </plugins>
+  
       <plugin>
         <artifactId>maven-site-plugin</artifactId>
         <configuration>
@@ -212,7 +210,6 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
   <scm>
     <connection>scm:git:git@github.com:jleetutorial/maven-project.git</connection>
     <developerConnection>scm:git:git@github.com:jleetutorial/maven-project.git</developerConnection>
